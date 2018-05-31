@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	截圖並下載 PNG
+	<button onclick="takeScreenShot()">截圖</button>
+	<script src="dom-to-image.js"></script>
+	<script src="FileSaver.min.js"></script>
+	<script type="text/javascript">
+		function takeScreenShot(){
+	        domtoimage.toBlob(document.body)
+	        .then(function (blob) {
+	            window.saveAs(blob, '截圖.png');
+	        });
+	    }
+	</script>
+</body>
+</html>
